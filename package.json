@@ -1,0 +1,10 @@
+{
+  "name": "drive_ease",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DriveEase Luxury Car Rental Website",
+  "scripts": {
+    "build": "echo 'Static site ready'",
+    "start": "node server.js"
+  }
+}
