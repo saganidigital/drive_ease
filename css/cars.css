@@ -1,0 +1,303 @@
+/* ==========================================================================
+   DriveEase - Featured Fleet Showcase Styles
+   ========================================================================== */
+
+.fleet-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+}
+
+/* Category Filter Tabs */
+.fleet-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(26, 16, 11, 0.6);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+  background: rgba(255, 87, 34, 0.08);
+}
+
+.filter-tab.active {
+  color: #FFF;
+  background: var(--accent-gradient);
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(255, 87, 34, 0.4);
+}
+
+/* Fleet Cards Grid */
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  position: relative;
+}
+
+/* Car Card */
+.car-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: transform var(--transition-smooth), 
+              box-shadow var(--transition-smooth), 
+              border-color var(--transition-smooth);
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--border-strong);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 87, 34, 0.15);
+}
+
+/* Car Card Filter Animation */
+.car-card.hidden {
+  display: none;
+}
+
+/* Card Header: Badges & Wishlist */
+.car-card-top {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+}
+
+.car-badge {
+  padding: 0.3rem 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: var(--radius-sm);
+}
+
+.badge-featured {
+  background: var(--accent-gradient);
+  color: #FFF;
+  box-shadow: 0 2px 10px rgba(255, 87, 34, 0.4);
+}
+
+.badge-category {
+  background: rgba(14, 9, 6, 0.85);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-medium);
+  backdrop-filter: blur(8px);
+}
+
+.car-like-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(14, 9, 6, 0.75);
+  border: 1px solid var(--border-medium);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.car-like-btn:hover,
+.car-like-btn.liked {
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(255, 87, 34, 0.15);
+}
+
+/* Car Image Media */
+.car-media {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, rgba(255, 87, 34, 0.15) 0%, rgba(14, 9, 6, 0.9) 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.car-card:hover .car-img {
+  transform: scale(1.08);
+}
+
+/* Fallback Stylized SVG Car Container */
+.car-svg-placeholder {
+  width: 80%;
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.7));
+  transition: transform 0.5s ease;
+}
+
+.car-card:hover .car-svg-placeholder {
+  transform: scale(1.06) translateY(-4px);
+}
+
+/* Card Body */
+.car-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.car-title-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.car-name {
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.car-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent-light);
+}
+
+.car-rating svg {
+  color: #FF7A50;
+}
+
+.car-type-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* Specs Chips Grid */
+.car-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.car-spec-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0.65rem 0.4rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  gap: 0.25rem;
+}
+
+.car-spec-item svg {
+  color: var(--accent-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.spec-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+.spec-value {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Card Footer: Price & CTA */
+.car-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto;
+}
+
+.car-price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-price-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.car-price-amount {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.car-price-amount span {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* View More Fleet Button */
+.fleet-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 768px) {
+  .fleet-grid {
+    grid-template-columns: 1fr;
+  }
+}

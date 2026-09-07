@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveEase | Premium Car Rental & Chauffeur Services</title>
+  <meta name="description" content="Experience the open road with DriveEase. Premium, exotic, and luxury rental cars with seamless digital booking, transparent pricing, and 24/7 concierge delivery.">
+  <meta name="keywords" content="car rental, luxury car hire, sports car rental, SUV rental, chauffeur service, exotic car hire">
+
+  <!-- Favicon icon using SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF5722'%3E%3Cpath d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z'/%3E%3Ccircle cx='7.5' cy='14.5' r='1.5'/%3E%3Ccircle cx='16.5' cy='14.5' r='1.5'/%3E%3C/svg%3E">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/cars.css">
+  <link rel="stylesheet" href="css/features.css">
+  <link rel="stylesheet" href="css/testimonials.css">
+  <link rel="stylesheet" href="css/modals.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       1. NAVIGATION BAR
+       ======================================================================== -->
+  <header class="navbar" id="main-navbar">
+    <div class="container navbar-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brand-logo" aria-label="DriveEase Home">
+        <div class="brand-icon-wrapper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.85 7h10.29l1.04 3H5.81l1.04-3zM19 17H5v-4.66l.12-.34h13.77l.11.34V17z"/>
+            <circle cx="7.5" cy="14.5" r="1.5"/>
+            <circle cx="16.5" cy="14.5" r="1.5"/>
+          </svg>
+        </div>
+        Drive<span class="brand-highlight">Ease</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-link active" id="nav-home">Home</a>
+        <a href="#fleet" class="nav-link" id="nav-fleet">Fleet</a>
+        <a href="#features" class="nav-link" id="nav-features">Why Us</a>
+        <a href="#process" class="nav-link" id="nav-process">How It Works</a>
+        <a href="#testimonials" class="nav-link" id="nav-testimonials">Reviews</a>
+      </nav>
+
+      <!-- Action Buttons (WhatsApp Demo + Sign In + Sign Up) -->
+      <div class="nav-actions">
+        <!-- WhatsApp Demo Button (No phone number, demo toast feedback) -->
+        <button type="button" class="btn btn-whatsapp" id="btn-whatsapp-nav" aria-label="Chat on WhatsApp (Demo Mode)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 2.05.811 3.211.812h.005c3.18 0 5.767-2.587 5.768-5.767 0-3.18-2.587-5.767-5.769-5.767zm7.848 5.766c-.002 4.337-3.529 7.863-7.868 7.863-1.321 0-2.613-.332-3.762-.962l-4.249 1.114 1.134-4.143c-.705-1.223-1.077-2.612-1.076-4.032.003-4.337 3.53-7.864 7.87-7.864 4.338 0 7.867 3.527 7.871 7.864z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </button>
+
+        <!-- Sign In Button -->
+        <button type="button" class="btn btn-outline btn-sm" id="btn-signin-nav" data-open-modal="signin-modal">
+          Sign In
+        </button>
+
+        <!-- Sign Up Button -->
+        <button type="button" class="btn btn-primary btn-sm" id="btn-signup-nav" data-open-modal="signup-modal">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Menu -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="brand-logo" style="margin-bottom: 2rem;">
+      <div class="brand-icon-wrapper">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/>
+        </svg>
+      </div>
+      Drive<span class="brand-highlight">Ease</span>
+    </div>
+
+    <ul class="mobile-nav-list">
+      <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+      <li><a href="#fleet" class="mobile-nav-link">Featured Fleet</a></li>
+      <li><a href="#features" class="mobile-nav-link">Why Choose Us</a></li>
+      <li><a href="#process" class="mobile-nav-link">How It Works</a></li>
+      <li><a href="#testimonials" class="mobile-nav-link">Customer Reviews</a></li>
+    </ul>
+
+    <div class="mobile-drawer-actions">
+      <button type="button" class="btn btn-whatsapp" id="btn-whatsapp-drawer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 2.05.811 3.211.812h.005c3.18 0 5.767-2.587 5.768-5.767 0-3.18-2.587-5.767-5.769-5.767z"/>
+        </svg>
+        <span>WhatsApp Concierge</span>
+      </button>
+      <button type="button" class="btn btn-secondary" data-open-modal="signin-modal">Sign In</button>
+      <button type="button" class="btn btn-primary" data-open-modal="signup-modal">Create Account</button>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <main>
+    <!-- ========================================================================
+         2. HERO SECTION
+         ======================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid-pattern"></div>
+      <div class="container hero-content">
+        <!-- Left Hero Column -->
+        <div class="hero-text reveal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            PREMIUM VEHICLE FLEET 2025
+          </div>
+          <h1 class="hero-title">
+            Drive Your Dream. <br>
+            <span class="highlight">Anywhere, Anytime.</span>
+          </h1>
+          <p class="hero-description">
+            Experience the adrenaline of high-performance rentals. Seamless digital reservations, zero hidden fees, and white-glove delivery directly to your terminal or hotel.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#fleet" class="btn btn-primary btn-lg" id="hero-btn-fleet">
+              <span>Explore Fleet</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#process" class="btn btn-secondary btn-lg" id="hero-btn-how">
+              <span>How It Works</span>
+            </a>
+          </div>
+
+          <!-- Trust Proof -->
+          <div class="hero-trust">
+            <div class="avatar-group">
+              <div class="avatar-item" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80');"></div>
+              <div class="avatar-item" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80');"></div>
+              <div class="avatar-item" style="background-image: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=100&q=80');"></div>
+              <div class="avatar-item" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=100&q=80');"></div>
+            </div>
+            <div class="trust-text">
+              <span class="trust-stars">★★★★★</span>
+              <span class="trust-highlight">4.9/5 Rating</span> from 2,800+ executive clients
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Column: Interactive Vehicle Stage -->
+        <div class="hero-visual reveal reveal-delay-2">
+          <!-- Floating Badge Top Left -->
+          <div class="floating-badge badge-top-left">
+            <div class="floating-badge-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <div>
+              <div class="floating-badge-title">Top Performance</div>
+              <div class="floating-badge-value">0-60 in 2.9s</div>
+            </div>
+          </div>
+
+          <!-- 3D Card Stage -->
+          <div class="hero-card-stage">
+            <div class="hero-car-image-wrap">
+              <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1000&q=80" 
+                   alt="Mercedes AMG GT Coupe" 
+                   class="hero-car-img" 
+                   loading="eager"
+                   onerror="this.src='https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80'">
+              <div class="car-floor-reflection"></div>
+            </div>
+
+            <div class="hero-car-info">
+              <div>
+                <span class="hero-car-tag">Flagship Exotic</span>
+                <div class="hero-car-name">Mercedes-AMG GT Coupe</div>
+              </div>
+              <div class="hero-car-price">
+                $350 <span>/ day</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Badge Bottom Right -->
+          <div class="floating-badge badge-bottom-right">
+            <div class="floating-badge-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div>
+              <div class="floating-badge-title">Zero Hassle</div>
+              <div class="floating-badge-value">100% Insured</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. SEARCH & BOOKING WIDGET
+         ======================================================================== -->
+    <section class="search-section" id="booking-widget">
+      <div class="container">
+        <div class="search-card reveal">
+          <!-- Booking Mode Tabs -->
+          <div class="search-tabs">
+            <button type="button" class="search-tab-btn active" id="tab-roundtrip">Round Trip</button>
+            <button type="button" class="search-tab-btn" id="tab-oneway">One Way</button>
+            <button type="button" class="search-tab-btn" id="tab-chauffeur">Chauffeur Service</button>
+          </div>
+
+          <!-- Search Form -->
+          <form class="search-form" id="car-search-form">
+            <!-- Pick-up Location -->
+            <div class="search-field-group">
+              <label for="search-location" class="search-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Pick-up Location
+              </label>
+              <div class="search-input-wrap">
+                <select id="search-location" class="search-input" required>
+                  <option value="LAX Airport Terminal 1">Los Angeles Airport (LAX)</option>
+                  <option value="Beverly Hills Flagship">Beverly Hills Center</option>
+                  <option value="Downtown Metro Hub">Downtown Metro Station</option>
+                  <option value="San Francisco Financial">San Francisco Financial Hub</option>
+                  <option value="Miami South Beach">Miami South Beach Marina</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Pick-up Date -->
+            <div class="search-field-group">
+              <label for="search-pickup-date" class="search-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Pick-up Date
+              </label>
+              <div class="search-input-wrap">
+                <input type="date" id="search-pickup-date" class="search-input" value="2025-04-10" required>
+              </div>
+            </div>
+
+            <!-- Return Date -->
+            <div class="search-field-group">
+              <label for="search-return-date" class="search-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                Drop-off Date
+              </label>
+              <div class="search-input-wrap">
+                <input type="date" id="search-return-date" class="search-input" value="2025-04-13" required>
+              </div>
+            </div>
+
+            <!-- Vehicle Category -->
+            <div class="search-field-group">
+              <label for="search-category" class="search-label">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/>
+                </svg>
+                Vehicle Category
+              </label>
+              <div class="search-input-wrap">
+                <select id="search-category" class="search-input">
+                  <option value="all">All Available Classes</option>
+                  <option value="suv">High-End SUVs</option>
+                  <option value="sedan">Executive Sedans</option>
+                  <option value="luxury">Luxury & VIP</option>
+                  <option value="electric">Electric / EV</option>
+                  <option value="sports">Exotic & Sports</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary search-submit-btn" id="btn-search-submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span>Search Fleet</span>
+            </button>
+          </form>
+
+          <!-- Quick Perks -->
+          <div class="search-perks">
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>Instant Digital Check-in & Keyless Unlock</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>Free Cancellation up to 24 Hours Before</span>
+            </div>
+            <div class="perk-item">
+              <span class="perk-icon">✓</span>
+              <span>Zero Hidden Fees or Fuel Surcharges</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. FEATURED CARS FLEET
+         ======================================================================== -->
+    <section class="section fleet-section" id="fleet">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            CURATED VEHICLES
+          </div>
+          <h2 class="section-title">
+            Our Elite <span class="highlight">Rental Fleet</span>
+          </h2>
+          <p class="section-subtitle">
+            Every vehicle in our collection is precision-detailed, maintained to dealership perfection, and ready for your immediate drive.
+          </p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="fleet-filter-bar reveal reveal-delay-1">
+          <button type="button" class="filter-tab active" data-filter="all">All Vehicles</button>
+          <button type="button" class="filter-tab" data-filter="suv">SUVs</button>
+          <button type="button" class="filter-tab" data-filter="sedan">Sedans</button>
+          <button type="button" class="filter-tab" data-filter="luxury">Luxury & VIP</button>
+          <button type="button" class="filter-tab" data-filter="electric">Electric</button>
+          <button type="button" class="filter-tab" data-filter="sports">Sports / Exotic</button>
+        </div>
+
+        <!-- Fleet Grid -->
+        <div class="fleet-grid" id="fleet-grid">
+          
+          <!-- Car 1: Porsche 911 Carrera GTS -->
+          <article class="car-card reveal" data-category="sports">
+            <div class="car-card-top">
+              <span class="car-badge badge-featured">Popular</span>
+              <button type="button" class="car-like-btn" aria-label="Save to favorites">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="car-media">
+              <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" 
+                   alt="Porsche 911 Carrera GTS" 
+                   class="car-img" 
+                   loading="lazy">
+            </div>
+            <div class="car-body">
+              <div class="car-title-wrap">
+                <h3 class="car-name">Porsche 911 Carrera GTS</h3>
+                <div class="car-rating">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>4.9 (142)</span>
+                </div>
+              </div>
+              <div class="car-type-desc">Sports Coupe • Twin-Turbo Boxer • 473 HP</div>
+              
+              <div class="car-specs-grid">
+                <div class="car-spec-item">
+                  <span class="spec-label">Seats</span>
+                  <span class="spec-value">2+2</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Trans</span>
+                  <span class="spec-value">8-Speed PDK</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">0-60 MPH</span>
+                  <span class="spec-value">3.2 sec</span>
+                </div>
+              </div>
+
+              <div class="car-footer">
+                <div class="car-price-block">
+                  <span class="car-price-label">Daily Rate</span>
+                  <div class="car-price-amount">$320 <span>/ day</span></div>
+                </div>
+                <button type="button" 
+                        class="btn btn-primary btn-sm btn-book-car"
+                        data-car-name="Porsche 911 Carrera GTS"
+                        data-car-price="$320"
+                        data-car-type="Sports Coupe"
+                        data-car-img="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80">
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 2: Range Rover Sport Autobiography -->
+          <article class="car-card reveal reveal-delay-1" data-category="suv">
+            <div class="car-card-top">
+              <span class="car-badge badge-category">SUV</span>
+              <button type="button" class="car-like-btn" aria-label="Save to favorites">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="car-media">
+              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" 
+                   alt="Range Rover Sport Autobiography" 
+                   class="car-img" 
+                   loading="lazy">
+            </div>
+            <div class="car-body">
+              <div class="car-title-wrap">
+                <h3 class="car-name">Range Rover Sport</h3>
+                <div class="car-rating">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>4.9 (98)</span>
+                </div>
+              </div>
+              <div class="car-type-desc">Executive Luxury SUV • AWD • V8 Supercharged</div>
+              
+              <div class="car-specs-grid">
+                <div class="car-spec-item">
+                  <span class="spec-label">Seats</span>
+                  <span class="spec-value">5 Seats</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Trans</span>
+                  <span class="spec-value">Automatic</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Luggage</span>
+                  <span class="spec-value">5 Bags</span>
+                </div>
+              </div>
+
+              <div class="car-footer">
+                <div class="car-price-block">
+                  <span class="car-price-label">Daily Rate</span>
+                  <div class="car-price-amount">$280 <span>/ day</span></div>
+                </div>
+                <button type="button" 
+                        class="btn btn-primary btn-sm btn-book-car"
+                        data-car-name="Range Rover Sport Autobiography"
+                        data-car-price="$280"
+                        data-car-type="Executive SUV"
+                        data-car-img="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80">
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 3: BMW M5 Competition -->
+          <article class="car-card reveal reveal-delay-2" data-category="sedan">
+            <div class="car-card-top">
+              <span class="car-badge badge-category">Sedan</span>
+              <button type="button" class="car-like-btn" aria-label="Save to favorites">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="car-media">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" 
+                   alt="BMW M5 Competition" 
+                   class="car-img" 
+                   loading="lazy">
+            </div>
+            <div class="car-body">
+              <div class="car-title-wrap">
+                <h3 class="car-name">BMW M5 Competition</h3>
+                <div class="car-rating">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>4.8 (85)</span>
+                </div>
+              </div>
+              <div class="car-type-desc">High-Performance Sedan • 4.4L Twin-Turbo • 617 HP</div>
+              
+              <div class="car-specs-grid">
+                <div class="car-spec-item">
+                  <span class="spec-label">Seats</span>
+                  <span class="spec-value">5 Seats</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Trans</span>
+                  <span class="spec-value">8-Speed M</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">0-60 MPH</span>
+                  <span class="spec-value">3.1 sec</span>
+                </div>
+              </div>
+
+              <div class="car-footer">
+                <div class="car-price-block">
+                  <span class="car-price-label">Daily Rate</span>
+                  <div class="car-price-amount">$240 <span>/ day</span></div>
+                </div>
+                <button type="button" 
+                        class="btn btn-primary btn-sm btn-book-car"
+                        data-car-name="BMW M5 Competition"
+                        data-car-price="$240"
+                        data-car-type="Performance Sedan"
+                        data-car-img="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80">
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 4: Mercedes-Benz S-Class 580 -->
+          <article class="car-card reveal" data-category="luxury">
+            <div class="car-card-top">
+              <span class="car-badge badge-featured">VIP Choice</span>
+              <button type="button" class="car-like-btn" aria-label="Save to favorites">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="car-media">
+              <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80" 
+                   alt="Mercedes-Benz S-Class 580" 
+                   class="car-img" 
+                   loading="lazy">
+            </div>
+            <div class="car-body">
+              <div class="car-title-wrap">
+                <h3 class="car-name">Mercedes-Benz S-Class</h3>
+                <div class="car-rating">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>5.0 (176)</span>
+                </div>
+              </div>
+              <div class="car-type-desc">Ultra-Luxury Chauffeur Saloon • Burmester 4D Audio</div>
+              
+              <div class="car-specs-grid">
+                <div class="car-spec-item">
+                  <span class="spec-label">Seats</span>
+                  <span class="spec-value">4-5 Seats</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Drive</span>
+                  <span class="spec-value">Airmatic AWD</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Comfort</span>
+                  <span class="spec-value">Hot Stone</span>
+                </div>
+              </div>
+
+              <div class="car-footer">
+                <div class="car-price-block">
+                  <span class="car-price-label">Daily Rate</span>
+                  <div class="car-price-amount">$290 <span>/ day</span></div>
+                </div>
+                <button type="button" 
+                        class="btn btn-primary btn-sm btn-book-car"
+                        data-car-name="Mercedes-Benz S-Class 580"
+                        data-car-price="$290"
+                        data-car-type="Ultra-Luxury Saloon"
+                        data-car-img="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=800&q=80">
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 5: Tesla Model S Plaid -->
+          <article class="car-card reveal reveal-delay-1" data-category="electric">
+            <div class="car-card-top">
+              <span class="car-badge badge-category">Electric</span>
+              <button type="button" class="car-like-btn" aria-label="Save to favorites">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="car-media">
+              <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80" 
+                   alt="Tesla Model S Plaid" 
+                   class="car-img" 
+                   loading="lazy">
+            </div>
+            <div class="car-body">
+              <div class="car-title-wrap">
+                <h3 class="car-name">Tesla Model S Plaid</h3>
+                <div class="car-rating">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>4.9 (112)</span>
+                </div>
+              </div>
+              <div class="car-type-desc">Tri-Motor All-Wheel Drive • 1,020 HP • 396 Mi Range</div>
+              
+              <div class="car-specs-grid">
+                <div class="car-spec-item">
+                  <span class="spec-label">Range</span>
+                  <span class="spec-value">396 mi</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">0-60 MPH</span>
+                  <span class="spec-value">1.99 sec</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Autopilot</span>
+                  <span class="spec-value">FSD Included</span>
+                </div>
+              </div>
+
+              <div class="car-footer">
+                <div class="car-price-block">
+                  <span class="car-price-label">Daily Rate</span>
+                  <div class="car-price-amount">$210 <span>/ day</span></div>
+                </div>
+                <button type="button" 
+                        class="btn btn-primary btn-sm btn-book-car"
+                        data-car-name="Tesla Model S Plaid"
+                        data-car-price="$210"
+                        data-car-type="Electric Hyper-Saloon"
+                        data-car-img="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80">
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Car 6: Audi RSQ8 Performance -->
+          <article class="car-card reveal reveal-delay-2" data-category="suv">
+            <div class="car-card-top">
+              <span class="car-badge badge-category">SUV</span>
+              <button type="button" class="car-like-btn" aria-label="Save to favorites">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </button>
+            </div>
+            <div class="car-media">
+              <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" 
+                   alt="Audi RSQ8 Performance" 
+                   class="car-img" 
+                   loading="lazy">
+            </div>
+            <div class="car-body">
+              <div class="car-title-wrap">
+                <h3 class="car-name">Audi RSQ8 Sport</h3>
+                <div class="car-rating">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                  <span>4.8 (74)</span>
+                </div>
+              </div>
+              <div class="car-type-desc">Twin-Turbo V8 • Quattro AWD • Ceramic Brakes</div>
+              
+              <div class="car-specs-grid">
+                <div class="car-spec-item">
+                  <span class="spec-label">Seats</span>
+                  <span class="spec-value">5 Seats</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">Trans</span>
+                  <span class="spec-value">Tiptronic</span>
+                </div>
+                <div class="car-spec-item">
+                  <span class="spec-label">0-60 MPH</span>
+                  <span class="spec-value">3.6 sec</span>
+                </div>
+              </div>
+
+              <div class="car-footer">
+                <div class="car-price-block">
+                  <span class="car-price-label">Daily Rate</span>
+                  <div class="car-price-amount">$260 <span>/ day</span></div>
+                </div>
+                <button type="button" 
+                        class="btn btn-primary btn-sm btn-book-car"
+                        data-car-name="Audi RSQ8 Sport"
+                        data-car-price="$260"
+                        data-car-type="Performance SUV"
+                        data-car-img="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80">
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- View Fleet CTA Banner -->
+        <div class="fleet-cta-wrap reveal">
+          <a href="#booking-widget" class="btn btn-secondary btn-lg">
+            <span>Explore 40+ More Premium Vehicles</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. WHY CHOOSE US (FEATURES & ANIMATED STATS)
+         ======================================================================== -->
+    <section class="section features-section" id="features">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            DRIVEEASE STANDARD
+          </div>
+          <h2 class="section-title">
+            Engineered For The <span class="highlight">Discerning Driver</span>
+          </h2>
+          <p class="section-subtitle">
+            We discarded old-fashioned rental counters and paperwork bottlenecks to provide an effortless, high-tier automotive experience.
+          </p>
+        </div>
+
+        <!-- 4 Key Feature Cards -->
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Zero Security Deposit</h3>
+            <p class="feature-desc">
+              Transparent transactions with no exorbitant credit card holds. Comprehensive premium collision waiver included in every rental.
+            </p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <h3 class="feature-title">3-Minute Digital Handover</h3>
+            <p class="feature-desc">
+              Scan your digital driver’s license, unlock through our secure smartphone keyless entry, and hit the highway without waiting in lines.
+            </p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3 class="feature-title">24/7 VIP Concierge</h3>
+            <p class="feature-desc">
+              Personal roadside assistance and concierge support anytime of the day or night. We even deliver to private hangars and yacht docks.
+            </p>
+          </div>
+
+          <div class="feature-card reveal reveal-delay-3">
+            <div class="feature-icon-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Dealership Mint Condition</h3>
+            <p class="feature-desc">
+              Every vehicle undergoes multi-point safety inspections, high-grade ozone sanitization, and deep detailing before each key handover.
+            </p>
+          </div>
+        </div>
+
+        <!-- Animated Stats Banner -->
+        <div class="stats-banner reveal">
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="500">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Luxury Vehicles In Fleet</span>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="48">0</span>
+              <span class="stat-suffix">k+</span>
+            </div>
+            <span class="stat-label">Successful Road Journeys</span>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="99.4">0</span>
+              <span class="stat-suffix">%</span>
+            </div>
+            <span class="stat-label">Customer Satisfaction</span>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-number-wrap">
+              <span class="stat-number" data-target="18">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">Metropolitan Service Hubs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. HOW IT WORKS (3-STEP PROCESS)
+         ======================================================================== -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            FRICTIONLESS BOOKING
+          </div>
+          <h2 class="section-title">
+            How It <span class="highlight">Works</span>
+          </h2>
+          <p class="section-subtitle">
+            From online selection to roaring down the open highway in just three intuitive steps.
+          </p>
+        </div>
+
+        <!-- Process Steps Grid -->
+        <div class="process-grid">
+          <!-- Step 1 -->
+          <div class="process-card reveal">
+            <div class="process-step-num">01</div>
+            <h3 class="process-title">Choose & Personalize</h3>
+            <p class="process-desc">
+              Browse our high-performance fleet, select your pickup hub or custom delivery address, and configure rental dates with instant transparent pricing.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-card reveal reveal-delay-1">
+            <div class="process-step-num">02</div>
+            <h3 class="process-title">Instant Digital Verification</h3>
+            <p class="process-desc">
+              Complete automated ID verification in under 60 seconds with your phone. Zero paper contracts, zero hidden damage insurance upcharges.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-card reveal reveal-delay-2">
+            <div class="process-step-num">03</div>
+            <h3 class="process-title">Ignite & Drive Away</h3>
+            <p class="process-desc">
+              Pick up at the hub or have our white-glove driver deliver the cleaned, fully fueled vehicle to your terminal. Press start and conquer the road.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. TESTIMONIALS & PROMO BANNER
+         ======================================================================== -->
+    <section class="section testimonials-section" id="testimonials">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header reveal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            REAL DRIVER STORIES
+          </div>
+          <h2 class="section-title">
+            Trusted By <span class="highlight">Thousands</span>
+          </h2>
+          <p class="section-subtitle">
+            Read what corporate executives, travelers, and automotive enthusiasts say about their journeys with DriveEase.
+          </p>
+        </div>
+
+        <!-- Carousel -->
+        <div class="testimonials-carousel-wrap reveal">
+          <div class="testimonials-track" id="testimonials-track">
+            <!-- Review 1 -->
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                  "Rented the Porsche 911 GTS for a weekend drive up the Pacific Coast Highway. The car was in showroom condition, delivered curbside at LAX with zero paperwork delay. Best rental service I have ever experienced."
+                </p>
+              </div>
+              <div class="testimonial-user">
+                <div class="testimonial-avatar">MR</div>
+                <div class="testimonial-meta">
+                  <div class="testimonial-name">
+                    Marcus Rodriguez
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <span class="testimonial-vehicle">Rented Porsche 911 Carrera GTS</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                  "Needed an executive Mercedes S-Class for high-profile investors visiting Miami. DriveEase accommodated our tight schedule with immaculate chauffeur service. Seamless billing and top-tier professionalism."
+                </p>
+              </div>
+              <div class="testimonial-user">
+                <div class="testimonial-avatar">SL</div>
+                <div class="testimonial-meta">
+                  <div class="testimonial-name">
+                    Sophia Laurent
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <span class="testimonial-vehicle">Rented Mercedes S-Class 580</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote">
+                  "The Range Rover Sport was perfect for our Aspen family ski vacation. Snow tires already mounted, pre-heated cabin, and generous luggage capacity. Their WhatsApp concierge was available instantly whenever we had questions."
+                </p>
+              </div>
+              <div class="testimonial-user">
+                <div class="testimonial-avatar">DK</div>
+                <div class="testimonial-meta">
+                  <div class="testimonial-name">
+                    David Kincaid
+                    <svg class="verified-icon" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                  </div>
+                  <span class="testimonial-vehicle">Rented Range Rover Sport Autobiography</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="carousel-controls">
+            <button type="button" class="carousel-btn" id="prev-testimonial" aria-label="Previous testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="carousel-btn" id="next-testimonial" aria-label="Next testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Special Limited Promo Banner -->
+        <div class="promo-section">
+          <div class="promo-banner reveal">
+            <div class="promo-text">
+              <div class="badge" style="margin-bottom: 0.5rem;">SPRING ESCAPE SPECIAL</div>
+              <h3 class="promo-title">Claim 20% Off Your First Luxury Booking</h3>
+              <p class="promo-desc">
+                Elevate your upcoming weekend journey. Apply promo code at digital reservation to enjoy an instant 20% discount on any vehicle in our fleet.
+              </p>
+              <div class="promo-code-wrap">
+                <span>Code:</span>
+                <span class="promo-code">DRIVE20</span>
+                <span class="copy-btn" id="copy-promo-btn">Copy Code</span>
+              </div>
+            </div>
+            <div class="promo-action">
+              <a href="#fleet" class="btn btn-primary btn-lg">Browse & Reserve</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       8. FOOTER
+       ======================================================================== -->
+  <footer class="footer" id="footer">
+    <div class="footer-ambient-glow"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo footer-logo" aria-label="DriveEase Home">
+            <div class="brand-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99z"/>
+              </svg>
+            </div>
+            Drive<span class="brand-highlight">Ease</span>
+          </a>
+          <p class="footer-tagline">
+            Redefining luxury and high-performance mobility. Transparent rates, spotless vehicles, and 24/7 client concierge worldwide.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-icon-btn" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-title">Quick Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#hero" class="footer-link">Home Overview</a></li>
+            <li><a href="#fleet" class="footer-link">Explore Fleet</a></li>
+            <li><a href="#features" class="footer-link">Why DriveEase</a></li>
+            <li><a href="#process" class="footer-link">How It Works</a></li>
+            <li><a href="#testimonials" class="footer-link">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Fleet Categories -->
+        <div>
+          <h4 class="footer-column-title">Fleet Classes</h4>
+          <ul class="footer-links-list">
+            <li><a href="#fleet" class="footer-link">Executive Sedans</a></li>
+            <li><a href="#fleet" class="footer-link">Luxury All-Terrain SUVs</a></li>
+            <li><a href="#fleet" class="footer-link">Exotic Sports Coupes</a></li>
+            <li><a href="#fleet" class="footer-link">Electric Vehicles (EV)</a></li>
+            <li><a href="#fleet" class="footer-link">Chauffeur Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter & Concierge Contact -->
+        <div>
+          <h4 class="footer-column-title">Direct Concierge</h4>
+          <p class="footer-newsletter-desc">
+            Subscribe for secret fleet drops and seasonal executive invitations.
+          </p>
+          <form class="footer-newsletter-form" id="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary newsletter-btn">Join</button>
+          </form>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+1 (800) 555-EASE (24/7 VIP)</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-whatsapp);">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 2.05.811 3.211.812h.005c3.18 0 5.767-2.587 5.768-5.767 0-3.18-2.587-5.767-5.769-5.767z"/>
+            </svg>
+            <a href="#" class="whatsapp-trigger" style="color: var(--color-whatsapp); font-weight: 500;">Chat on WhatsApp (Demo)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="copyright-text">
+          &copy; 2025 DriveEase Mobility Inc. All rights reserved. Built with precision.
+        </div>
+        <ul class="footer-legal-links">
+          <li><a href="#" class="legal-link">Privacy Policy</a></li>
+          <li><a href="#" class="legal-link">Terms of Service</a></li>
+          <li><a href="#" class="legal-link">Cookie Settings</a></li>
+          <li><a href="#" class="legal-link">Security Center</a></li>
+        </ul>
+        <button type="button" class="back-to-top-btn" aria-label="Back to top">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       9. MODALS (MODERN NATIVE <dialog>)
+       ======================================================================== -->
+
+  <!-- Sign In Modal -->
+  <dialog id="signin-modal" aria-labelledby="signin-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="signin-title">Welcome Back</h3>
+        <p class="modal-subtitle">Access your reservations, saved vehicles, and rewards.</p>
+      </div>
+
+      <form class="modal-form" id="signin-form">
+        <div class="form-group">
+          <label for="signin-email" class="form-label">Email Address</label>
+          <input type="email" id="signin-email" class="form-input" placeholder="name@company.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="signin-password" class="form-label">Password</label>
+          <input type="password" id="signin-password" class="form-input" placeholder="••••••••" required>
+        </div>
+
+        <div class="form-options">
+          <label class="form-checkbox-label">
+            <input type="checkbox" class="form-checkbox" checked>
+            <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+
+        <div class="modal-divider">
+          <span>Or continue with</span>
+        </div>
+
+        <div class="social-auth-grid">
+          <button type="button" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.24 10.285V13.4h6.887C18.2 16.14 15.645 18 12.24 18c-3.315 0-6-2.685-6-6s2.685-6 6-6c1.62 0 3.09.615 4.2 1.62l2.37-2.37C17.16 3.66 14.865 3 12.24 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c4.97 0 8.76-3.5 8.76-8.865 0-.585-.06-1.155-.165-1.7H12.24z"/>
+            </svg>
+            Google
+          </button>
+          <button type="button" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.38c.62-.76 1.05-1.81.93-2.88-.92.04-2.02.62-2.66 1.38-.56.65-1.06 1.73-.93 2.76 1.03.08 2.05-.53 2.66-1.26"/>
+            </svg>
+            Apple
+          </button>
+        </div>
+
+        <div class="modal-footer-switch">
+          Don't have an account? 
+          <a href="#" class="modal-switch-btn" data-switch-to="signup-modal">Create one</a>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Sign Up Modal -->
+  <dialog id="signup-modal" aria-labelledby="signup-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <h3 class="modal-title" id="signup-title">Join DriveEase</h3>
+        <p class="modal-subtitle">Experience express keyless rental with executive privileges.</p>
+      </div>
+
+      <form class="modal-form" id="signup-form">
+        <div class="form-group">
+          <label for="signup-name" class="form-label">Full Name</label>
+          <input type="text" id="signup-name" class="form-input" placeholder="Alexander Wright" required>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email" class="form-label">Email Address</label>
+          <input type="email" id="signup-email" class="form-input" placeholder="alexander@company.com" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="signup-phone" class="form-label">Phone</label>
+            <input type="tel" id="signup-phone" class="form-input" placeholder="+1 (555) 000-0000" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password" class="form-label">Password</label>
+            <input type="password" id="signup-password" class="form-input" placeholder="Min. 8 characters" required>
+          </div>
+        </div>
+
+        <div class="form-options">
+          <label class="form-checkbox-label">
+            <input type="checkbox" class="form-checkbox" required checked>
+            <span>I agree to the Terms of Service & Privacy Policy</span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+
+        <div class="modal-footer-switch">
+          Already a member? 
+          <a href="#" class="modal-switch-btn" data-switch-to="signin-modal">Sign In</a>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Quick Booking / Reservation Modal -->
+  <dialog id="booking-modal" class="dialog-wide" aria-labelledby="booking-modal-title">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <div class="badge" style="margin-bottom: 0.5rem;">INSTANT RESERVATION</div>
+        <h3 class="modal-title" id="booking-modal-title">Reserve Your Vehicle</h3>
+        <p class="modal-subtitle">No security deposit. Free cancellation up to 24 hours prior.</p>
+      </div>
+
+      <!-- Selected Car Preview Box -->
+      <div class="booking-summary-box">
+        <img id="booking-car-img" 
+             src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=300&q=80" 
+             alt="Selected car thumbnail" 
+             class="booking-car-thumb">
+        <div class="booking-car-meta">
+          <div id="booking-car-name" class="booking-car-name">Porsche 911 Carrera GTS</div>
+          <div id="booking-car-type" style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0.25rem;">Sports Coupe</div>
+          <div id="booking-car-rate" class="booking-car-rate">$320 / day</div>
+        </div>
+      </div>
+
+      <form class="modal-form" id="booking-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="book-pickup-hub" class="form-label">Pick-up Location</label>
+            <select id="book-pickup-hub" class="form-input" required>
+              <option value="LAX">Los Angeles Airport (LAX) - Terminal Delivery</option>
+              <option value="Beverly">Beverly Hills Flagship Lounge</option>
+              <option value="SF">San Francisco Executive Terminal</option>
+              <option value="Miami">Miami South Beach Marina</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="book-driver-name" class="form-label">Driver Full Name</label>
+            <input type="text" id="book-driver-name" class="form-input" placeholder="Full Legal Name" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="book-dates-pickup" class="form-label">Pick-up Date & Time</label>
+            <input type="datetime-local" id="book-dates-pickup" class="form-input" value="2025-04-10T10:00" required>
+          </div>
+          <div class="form-group">
+            <label for="book-dates-return" class="form-label">Drop-off Date & Time</label>
+            <input type="datetime-local" id="book-dates-return" class="form-input" value="2025-04-13T10:00" required>
+          </div>
+        </div>
+
+        <!-- Estimated Breakdown -->
+        <div class="price-breakdown">
+          <div class="price-row">
+            <span>Rental Duration (Estimate)</span>
+            <span id="booking-daily-rate">$320 x 3 days</span>
+          </div>
+          <div class="price-row">
+            <span>Comprehensive Damage Waiver</span>
+            <span style="color: var(--color-success);">FREE ($0)</span>
+          </div>
+          <div class="price-row">
+            <span>Curbside Delivery & Detailing</span>
+            <span style="color: var(--color-success);">Included</span>
+          </div>
+          <div class="price-row total-row">
+            <span>Estimated Total (Taxes incl.)</span>
+            <span id="booking-total-rate">$1,056</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 0.5rem;">
+          Confirm Reservation Now
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/cars.js"></script>
+  <script src="js/modals.js"></script>
+</body>
+</html>

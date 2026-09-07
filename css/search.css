@@ -1,0 +1,207 @@
+/* ==========================================================================
+   DriveEase - Car Search & Booking Widget Styles
+   ========================================================================== */
+
+.search-section {
+  position: relative;
+  margin-top: -50px;
+  z-index: 10;
+  padding-bottom: 2rem;
+}
+
+.search-card {
+  background: rgba(26, 16, 11, 0.85);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 87, 34, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent decorative top border bar */
+.search-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-gradient);
+}
+
+/* Booking Mode Tabs */
+.search-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+  flex-wrap: wrap;
+}
+
+.search-tab-btn {
+  padding: 0.5rem 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--transition-fast);
+}
+
+.search-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 87, 34, 0.08);
+  border-color: var(--border-medium);
+}
+
+.search-tab-btn.active {
+  color: #FFF;
+  background: var(--accent-gradient);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(255, 87, 34, 0.35);
+}
+
+/* Search Form Grid */
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1.25rem;
+  align-items: flex-end;
+}
+
+.search-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.search-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.search-label svg {
+  color: var(--accent-primary);
+  width: 16px;
+  height: 16px;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  background: rgba(14, 9, 6, 0.7);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 0.8rem 1rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.search-input-wrap:focus-within {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.15);
+}
+
+.search-input {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.search-input::placeholder {
+  color: var(--text-dim);
+}
+
+/* Styled Select */
+select.search-input {
+  cursor: pointer;
+}
+
+select.search-input option {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  padding: 0.5rem;
+}
+
+/* Search Submit Button */
+.search-submit-btn {
+  height: 52px;
+  padding-inline: 1.8rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Quick Perks Banner below Search Fields */
+.search-perks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.perk-icon {
+  color: var(--color-success);
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive Search Grid */
+@media (max-width: 1100px) {
+  .search-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-submit-btn {
+    grid-column: span 2;
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .search-section {
+    margin-top: -20px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .search-submit-btn {
+    grid-column: span 1;
+  }
+
+  .search-perks {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+}
