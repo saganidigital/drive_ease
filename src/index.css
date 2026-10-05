@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-jakarta);
+    background-color: #07080b;
+    color: #e2e8f0;
+  }
+
+  h1, h2, h3, .font-royal {
+    font-family: var(--font-cinzel);
+  }
+}
+
+/* Luxury Gold & Metallic Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #f7e6a7 0%, #d4af37 40%, #aa8420 70%, #ffd978 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #dfb743 0%, #c49a2c 50%, #997213 100%);
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(135deg, #d4af37 0%, rgba(212, 175, 55, 0.2) 50%, #d4af37 100%) 1;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 17, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-panel-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 25, 35, 0.9);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 12px 40px -10px rgba(212, 175, 55, 0.18);
+  transform: translateY(-4px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07080b;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2c36;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Keyframe animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Scroll Reveal base helper */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-active {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
