@@ -10,6 +10,7 @@ export default function Navbar({ onOpenBooking }) {
 
   // `short` is used in the desktop bar (tight space), `label` in the mobile drawer
   const navLinks = [
+    { label: "360° Studio", short: "360° Studio", href: "#cinematic-showcase" },
     { label: "Fleet Showroom", short: "Fleet", href: "#fleet" },
     { label: "VIP Services", short: "Services", href: "#services" },
     { label: "Why Royal", short: "Why Royal", href: "#experience" },

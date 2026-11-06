@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import Preloader from './components/Preloader';
 import ScrollProgressBar from './components/ScrollProgressBar';
 import Navbar from './components/Navbar';
 import BookingModal from './components/BookingModal';
 import Toast from './components/Toast';
 import HeroSection from './sections/HeroSection';
+import CarScrollShowcase from './sections/CarScrollShowcase';
 import FleetSection from './sections/FleetSection';
 import ServicesSection from './sections/ServicesSection';
 import StatsSection from './sections/StatsSection';
@@ -11,8 +13,12 @@ import ExperienceSection from './sections/ExperienceSection';
 import TestimonialsSection from './sections/TestimonialsSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';
+import { useLenis } from './hooks/useLenis';
 
 export default function App() {
+  // Initialize Lenis smooth scroll synchronized with GSAP ScrollTrigger
+  useLenis();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
@@ -33,6 +39,9 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-[#07080b] text-slate-100 selection:bg-amber-500 selection:text-black font-sans">
+      {/* 0. Luxury Royal Auto Hub Global Preloader & GPU Pre-decode */}
+      <Preloader />
+
       {/* 1. Scroll Progress Bar fixed to top */}
       <ScrollProgressBar />
 
@@ -43,6 +52,9 @@ export default function App() {
       <main id="main-content">
         {/* Hero Section with Parallax & Visual Scaling */}
         <HeroSection onOpenBooking={handleOpenBooking} />
+
+        {/* 360° Cinematic Frame Scroll Showcase with GSAP + Lenis */}
+        <CarScrollShowcase onOpenBooking={handleOpenBooking} />
 
         {/* Fleet Showroom with Category Filters & Staggered Cards */}
         <FleetSection onOpenBooking={handleOpenBooking} />

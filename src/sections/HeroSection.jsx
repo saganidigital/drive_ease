@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Crown, Sparkles, MessageSquare, ArrowRight, ShieldCheck, Award, Zap } from 'lucide-react';
+import { Crown, Sparkles, MessageSquare, ArrowRight, ShieldCheck, Award, Zap, Compass } from 'lucide-react';
 import { companyInfo } from '../data/company';
 import { useScroll } from '../hooks/useScroll';
 
@@ -150,11 +150,18 @@ export default function HeroSection({ onOpenBooking }) {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-between sm:justify-end">
                   <div className="text-right">
                     <span className="text-[10px] uppercase tracking-wider text-slate-400 block">Daily VIP Hire</span>
                     <span className="text-sm sm:text-base font-bold text-amber-300 font-mono">$1,850/day</span>
                   </div>
+                  <a
+                    href="#cinematic-showcase"
+                    className="px-3.5 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 transition-all flex items-center gap-1.5 shadow-sm"
+                  >
+                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                    <span className="hidden xs:inline">360° Studio</span>
+                  </a>
                   <button
                     onClick={() => onOpenBooking({ name: "Aston Martin DBS Superleggera" })}
                     className="px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-black bg-amber-400 hover:bg-amber-300 transition-colors shadow-md shrink-0"
