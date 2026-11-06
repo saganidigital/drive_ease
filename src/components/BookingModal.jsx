@@ -64,7 +64,7 @@ export default function BookingModal({ isOpen, onClose, selectedCar, onShowToast
     const text = encodeURIComponent(
       `Hello Royal Auto Hub, I am inquiring about VIP ${formData.serviceType.toUpperCase()} for ${formData.carName}. My name is ${formData.name || 'Client'}.`
     );
-    window.open(`https://wa.me/923001234567?text=${text}`, '_blank');
+    window.open(`https://wa.me/924235718800?text=${text}`, '_blank');
   };
 
   return (
@@ -197,16 +197,16 @@ export default function BookingModal({ isOpen, onClose, selectedCar, onShowToast
                 <div>
                   <label className="block text-xs font-medium text-slate-300 mb-1">Phone / WhatsApp</label>
                   <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-500">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
                       <Phone className="w-4 h-4" />
                     </div>
                     <input
                       type="tel"
                       required
-                      placeholder="+92 300 1234567"
+                      placeholder="+92 42 3571 8800"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white placeholder-slate-500 outline-none"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white placeholder-slate-400 outline-none"
                     />
                   </div>
                 </div>

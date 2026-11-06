@@ -15,7 +15,8 @@ export function useIntersectionObserver({
 
   useEffect(() => {
     const node = elementRef.current;
-    if (!node || typeof IntersectionObserver === 'undefined') {
+    const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!node || typeof IntersectionObserver === 'undefined' || prefersReducedMotion) {
       setIsVisible(true);
       return;
     }

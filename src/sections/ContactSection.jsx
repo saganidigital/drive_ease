@@ -32,7 +32,7 @@ export default function ContactSection({ onShowToast }) {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 sm:py-32 relative bg-[#07080d] overflow-hidden">
+    <section id="contact" ref={sectionRef} className="section-padding relative bg-[#07080d] overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
 
@@ -50,19 +50,19 @@ export default function ContactSection({ onShowToast }) {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           
-          {/* Left Column: Direct Contact Info from Flyer */}
+          {/* Left Column: Direct Contact Info */}
           <div className={`lg:col-span-5 rounded-2xl bg-[#0e1017] p-8 border border-amber-500/25 flex flex-col justify-between transition-all duration-700 delay-150 ${
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}>
             <div className="space-y-6">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400 block mb-1">
+                <span className="text-xs font-bold uppercase tracking-widest text-amber-400 block mb-1">
                   Immediate Concierge Assistance
                 </span>
                 <h3 className="font-royal text-2xl font-bold text-white">
-                  Visit Us Today!
+                  Visit Our Showroom
                 </h3>
-                <p className="text-xs text-slate-300 mt-2 leading-relaxed">
+                <p className="text-[13px] sm:text-sm text-slate-300 mt-2 leading-relaxed font-normal">
                   Our private salon provides an exclusive setting for high-profile clients to inspect rare vehicles and discuss bespoke financing in total privacy.
                 </p>
               </div>
@@ -75,7 +75,10 @@ export default function ContactSection({ onShowToast }) {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400 block">Call / WhatsApp Hotline</span>
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-300 block">Call / WhatsApp Hotline</span>
+                    <a href={`tel:${companyInfo.phone}`} className="text-sm font-semibold text-white hover:text-amber-300 transition-colors font-mono mt-0.5 block">
+                      {companyInfo.phone}
+                    </a>
                   </div>
                 </div>
 
@@ -85,12 +88,12 @@ export default function ContactSection({ onShowToast }) {
                     <MessageSquare className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400 block">Instant WhatsApp Chat</span>
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-300 block">Instant WhatsApp Chat</span>
                     <a 
                       href={companyInfo.whatsappUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-xs sm:text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1"
+                      className="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors inline-flex items-center gap-1 mt-0.5"
                     >
                       <span>Start Chat With Concierge</span>
                       <span>&rarr;</span>
@@ -104,9 +107,9 @@ export default function ContactSection({ onShowToast }) {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400 block">Showroom Location</span>
-                    <p className="text-xs sm:text-sm font-medium text-white">{companyInfo.address}</p>
-                    <p className="text-[11px] text-slate-400">{companyInfo.city}</p>
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-300 block">Showroom Location</span>
+                    <p className="text-sm font-medium text-white mt-0.5">{companyInfo.address}</p>
+                    <p className="text-[13px] text-slate-300">{companyInfo.city}</p>
                   </div>
                 </div>
 
@@ -116,15 +119,15 @@ export default function ContactSection({ onShowToast }) {
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-medium uppercase tracking-wider text-slate-400 block">Hours of Operation</span>
-                    <p className="text-xs sm:text-sm font-medium text-slate-200">{companyInfo.hours}</p>
+                    <span className="text-xs font-medium uppercase tracking-wider text-slate-300 block">Hours of Operation</span>
+                    <p className="text-sm font-medium text-slate-200 mt-0.5">{companyInfo.hours}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Bottom Confidentiality assurance */}
-            <div className="mt-8 pt-4 border-t border-white/5 flex items-center gap-2.5 text-[11px] text-slate-400">
+            <div className="mt-8 pt-4 border-t border-white/10 flex items-center gap-2.5 text-[13px] text-slate-300">
               <Shield className="w-4 h-4 text-amber-400 shrink-0" />
               <span>Registered luxury automotive vendor with discreet escrow handling.</span>
             </div>
@@ -140,7 +143,7 @@ export default function ContactSection({ onShowToast }) {
                   <CheckCircle className="w-10 h-10" />
                 </div>
                 <h3 className="font-royal text-2xl font-bold text-white">Inquiry Received</h3>
-                <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed">
+                <p className="text-sm text-slate-200 max-w-md mx-auto leading-relaxed">
                   Thank you, <strong className="text-amber-400">{form.name}</strong>. Your consultation request regarding <strong className="text-amber-300">{form.inquiryType}</strong> has been logged. Our Senior Curator will respond shortly.
                 </p>
                 <div className="pt-2">
@@ -149,7 +152,7 @@ export default function ContactSection({ onShowToast }) {
                       setSubmitted(false);
                       setForm({ name: '', phone: '', email: '', inquiryType: 'Rent a Supercar', message: '' });
                     }}
-                    className="px-6 py-2.5 rounded-lg text-xs font-semibold text-slate-300 hover:text-white bg-zinc-800 hover:bg-zinc-700 transition-colors"
+                    className="px-6 py-2.5 rounded-lg text-[13px] font-semibold text-slate-200 hover:text-white bg-zinc-800 hover:bg-zinc-700 transition-colors cursor-pointer"
                   >
                     Send Another Inquiry
                   </button>
@@ -161,7 +164,7 @@ export default function ContactSection({ onShowToast }) {
                   <h3 className="font-royal text-xl sm:text-2xl font-bold text-white">
                     Request Private Consultation
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1">
+                  <p className="text-[13px] sm:text-sm text-slate-300 mt-1">
                     Fill out the VIP briefing below for immediate scheduling.
                   </p>
                 </div>
@@ -170,26 +173,26 @@ export default function ContactSection({ onShowToast }) {
                   {/* Name and Phone */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Full Name *</label>
+                      <label className="block text-sm font-medium text-slate-200 mb-1.5">Full Name *</label>
                       <input
                         type="text"
                         required
                         placeholder="e.g. Sardar Farooq"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white placeholder-slate-500 outline-none"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-slate-400 outline-none"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Contact Phone / WhatsApp *</label>
+                      <label className="block text-sm font-medium text-slate-200 mb-1.5">Contact Phone / WhatsApp *</label>
                       <input
                         type="tel"
                         required
-                        placeholder="+92 300 1234567"
+                        placeholder="+92 42 3571 8800"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white placeholder-slate-500 outline-none"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-slate-400 outline-none"
                       />
                     </div>
                   </div>
@@ -197,22 +200,22 @@ export default function ContactSection({ onShowToast }) {
                   {/* Email & Inquiry Type */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Email Address</label>
+                      <label className="block text-sm font-medium text-slate-200 mb-1.5">Email Address</label>
                       <input
                         type="email"
-                        placeholder="vip@domain.com"
+                        placeholder="vip@royalautohub.com"
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white placeholder-slate-500 outline-none"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-slate-400 outline-none"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-medium text-slate-300 mb-1.5">Purpose of Inquiry</label>
+                      <label className="block text-sm font-medium text-slate-200 mb-1.5">Purpose of Inquiry</label>
                       <select
                         value={form.inquiryType}
                         onChange={(e) => setForm({ ...form, inquiryType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white outline-none"
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm text-white outline-none"
                       >
                         <option value="Rent a Supercar">Rent a Supercar</option>
                         <option value="Vehicle Purchase / Import">Vehicle Purchase / Import</option>
@@ -225,13 +228,13 @@ export default function ContactSection({ onShowToast }) {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs font-medium text-slate-300 mb-1.5">Specific Requirements or Preferred Model</label>
+                    <label className="block text-sm font-medium text-slate-200 mb-1.5">Specific Requirements or Preferred Model</label>
                     <textarea
                       rows={3}
-                      placeholder="Specify dates, vehicle model (e.g. Aston Martin DBS, Maybach), or special event requirements..."
+                      placeholder="Specify dates, vehicle model (e.g. Aston Martin DBS, BMW M4 Competition), or special event requirements..."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-800 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-xs text-white placeholder-slate-500 outline-none resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-900 border border-zinc-700 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 text-sm text-white placeholder-slate-400 outline-none resize-none"
                     />
                   </div>
 
@@ -240,7 +243,7 @@ export default function ContactSection({ onShowToast }) {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-3.5 px-6 rounded-xl text-xs font-bold uppercase tracking-[0.2em] text-black bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 shadow-[0_0_25px_rgba(212,175,55,0.35)] transition-all hover:scale-[1.01] active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2"
+                      className="w-full py-3.5 px-6 rounded-xl text-[13px] font-bold uppercase tracking-[0.2em] text-black bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 hover:from-amber-300 hover:to-yellow-300 shadow-[0_0_25px_rgba(212,175,55,0.35)] transition-all hover:scale-[1.01] active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
                     >
                       {loading ? (
                         <span>Transmitting Inquiry...</span>

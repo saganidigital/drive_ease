@@ -17,7 +17,7 @@ export default function ServicesSection({ onOpenBooking }) {
   const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
-    <section id="services" ref={sectionRef} className="py-24 sm:py-32 relative bg-[#07080c] overflow-hidden">
+    <section id="services" ref={sectionRef} className="section-padding relative bg-[#07080c] overflow-hidden">
       {/* Decorative Golden Ambient Backdrops */}
       <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-amber-600/5 rounded-full blur-[140px] pointer-events-none" />
@@ -58,7 +58,7 @@ export default function ServicesSection({ onOpenBooking }) {
                       <Icon className="w-6 h-6 drop-shadow-[0_2px_8px_rgba(245,158,11,0.5)]" />
                     </div>
 
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-slate-300 group-hover:border-amber-500/40 group-hover:text-amber-300 transition-colors">
+                    <span className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-zinc-900 border border-white/10 text-slate-200 group-hover:border-amber-500/40 group-hover:text-amber-300 transition-colors">
                       {service.badge}
                     </span>
                   </div>
@@ -67,14 +67,14 @@ export default function ServicesSection({ onOpenBooking }) {
                   <h3 className="font-royal text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-light mb-6">
+                  <p className="text-[13px] sm:text-sm text-slate-300 leading-relaxed font-normal mb-6">
                     {service.description}
                   </p>
 
                   {/* Bullet points */}
                   <ul className="space-y-2.5 mb-6">
                     {service.bullets.map((bullet, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
+                      <li key={bIdx} className="flex items-start gap-2.5 text-[13px] text-slate-200 font-normal">
                         <div className="w-4 h-4 rounded-full bg-amber-500/15 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0 mt-0.5">
                           <Check className="w-2.5 h-2.5" />
                         </div>
@@ -85,15 +85,15 @@ export default function ServicesSection({ onOpenBooking }) {
                 </div>
 
                 {/* Card Action Link */}
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                   <button
                     onClick={() => onOpenBooking({ name: service.title })}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors group/btn"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-wider text-amber-400 hover:text-amber-300 transition-colors group/btn cursor-pointer"
                   >
                     <span>Inquire Service</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1" />
                   </button>
-                  <span className="text-[10px] text-slate-500 font-mono">0{index + 1}</span>
+                  <span className="text-xs text-slate-300 font-mono">0{index + 1}</span>
                 </div>
 
               </div>

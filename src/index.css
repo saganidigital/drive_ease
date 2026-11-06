@@ -108,3 +108,38 @@
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
 }
+
+/* Consistent Section Vertical Padding */
+.section-padding {
+  padding-top: clamp(64px, 8vw, 100px);
+  padding-bottom: clamp(64px, 8vw, 100px);
+}
+
+/* Crisp 3-4% Feather + Contrast/Saturation Boost on Fly Around Canvas */
+.canvas-edge-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3.5%, black 96.5%, transparent 100%),
+                      linear-gradient(to bottom, transparent 0%, black 3.5%, black 96.5%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 3.5%, black 96.5%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, black 3.5%, black 96.5%, transparent 100%);
+  mask-composite: intersect;
+  filter: contrast(1.08) saturate(1.12);
+}
+
+/* Reduced Motion Accessibility Support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-glow,
+  .animate-pulse,
+  .animate-ping,
+  .animate-spin,
+  .animate-bounce {
+    animation: none !important;
+  }
+
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

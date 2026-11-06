@@ -12,6 +12,10 @@ export function useLenis() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
     // 1. Initialize Lenis with refined inertia easing
     const lenis = new Lenis({
       duration: 1.2,

@@ -31,7 +31,7 @@ export default function ExperienceSection({ onOpenBooking }) {
   ];
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 sm:py-32 relative bg-[#080a0f] overflow-hidden">
+    <section id="experience" ref={sectionRef} className="section-padding relative bg-[#080a0f] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -61,15 +61,15 @@ export default function ExperienceSection({ onOpenBooking }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080a0f] via-transparent to-black/30 pointer-events-none" />
 
                 {/* Floating Quote Box */}
-                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-[#0d0f18]/90 backdrop-blur-md border border-amber-500/30 shadow-xl">
-                  <p className="text-xs sm:text-sm text-slate-200 italic font-light">
+                <div className="absolute bottom-6 left-6 right-6 p-5 rounded-xl bg-[#0d0f18]/95 backdrop-blur-md border border-amber-500/30 shadow-xl">
+                  <p className="text-[13px] sm:text-sm text-slate-200 italic font-normal leading-relaxed">
                     "From the moment you step into our private salon, you are not merely selecting a vehicle—you are claiming a masterwork of engineering."
                   </p>
                   <div className="mt-3 flex items-center justify-between">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
                       Showroom Director · Royal Auto Hub
                     </span>
-                    <span className="text-[10px] text-slate-400 font-mono">Private Salon 01</span>
+                    <span className="text-xs text-slate-300 font-mono">Private Salon 01</span>
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@ export default function ExperienceSection({ onOpenBooking }) {
                     <h4 className="font-royal text-base sm:text-lg font-bold text-white">
                       {item.title}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
+                    <p className="text-[13px] sm:text-sm text-slate-300 font-normal leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -109,7 +109,7 @@ export default function ExperienceSection({ onOpenBooking }) {
             <div className={`pt-4 transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
               <button
                 onClick={() => onOpenBooking(null)}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-xs uppercase tracking-widest font-bold text-black bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 shadow-[0_0_20px_rgba(212,175,55,0.35)] transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl text-[13px] uppercase tracking-widest font-bold text-black bg-gradient-to-r from-amber-400 to-yellow-400 hover:from-amber-300 hover:to-yellow-300 shadow-[0_0_20px_rgba(212,175,55,0.35)] transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>Schedule Private Showroom Tour</span>
                 <ArrowRight className="w-4 h-4" />

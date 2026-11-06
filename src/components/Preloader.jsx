@@ -84,8 +84,8 @@ export default function Preloader({ onComplete }) {
           </h1>
         </div>
 
-        <p className="text-xs text-slate-400 font-light max-w-xs mb-8">
-          Calibrating 360° interactive supercar engine and pre-decoding {TOTAL_FRAMES} frames into GPU memory.
+        <p className="text-xs text-slate-300 font-normal max-w-xs mb-8">
+          Calibrating interactive fly-around showcase and pre-decoding {TOTAL_FRAMES} frames into GPU memory.
         </p>
 
         {/* Luxury Gold Progress Bar */}

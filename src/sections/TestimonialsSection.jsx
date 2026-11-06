@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
   const [sectionRef, isVisible] = useIntersectionObserver({ threshold: 0.15 });
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-24 sm:py-32 relative bg-[#06070a] border-t border-white/5">
+    <section id="testimonials" ref={sectionRef} className="section-padding relative bg-[#06070a] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
@@ -22,7 +22,7 @@ export default function TestimonialsSection() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {testimonialsData.map((review, idx) => {
             const staggerDelay = idx * 120;
 
@@ -42,26 +42,26 @@ export default function TestimonialsSection() {
                         <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
-                    <Quote className="w-8 h-8 text-amber-500/20" />
+                    <Quote className="w-8 h-8 text-amber-500/25" />
                   </div>
 
                   {/* Comment */}
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed font-light mb-6 italic">
+                  <p className="text-slate-200 text-sm leading-relaxed font-normal mb-6 italic">
                     "{review.comment}"
                   </p>
                 </div>
 
                 {/* Author Info */}
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-2">
                   <div>
                     <h4 className="font-royal text-sm font-bold text-white flex items-center gap-1.5">
                       <span>{review.name}</span>
                       <ShieldCheck className="w-3.5 h-3.5 text-amber-400" title="Verified Client" />
                     </h4>
-                    <span className="text-[11px] text-slate-400 block">{review.role} · {review.location}</span>
+                    <span className="text-[13px] text-slate-300 font-normal block mt-0.5">{review.role} · {review.location}</span>
                   </div>
 
-                  <span className="text-[10px] font-mono px-2.5 py-1 rounded bg-zinc-900 border border-white/5 text-amber-400/90 text-right">
+                  <span className="text-xs font-mono px-2.5 py-1 rounded bg-zinc-900 border border-white/10 text-amber-300 text-right shrink-0">
                     {review.vehicle}
                   </span>
                 </div>
